@@ -19,6 +19,10 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const ProjectDetails = ({ project }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { t } = useLanguage();
+    const content =
+        t.projects.content[
+            project.slug as keyof typeof t.projects.content
+        ] ?? project;
 
     useGSAP(
         () => {
@@ -153,17 +157,17 @@ const ProjectDetails = ({ project }: Props) => {
                                 </p>
 
                                 <div className="text-lg prose-xl markdown-text">
-                                    {parse(project.description)}
+                                    {parse(content.description)}
                                 </div>
                             </div>
-                            {project.role && (
+                            {content.role && (
                                 <div className="fade-in-later">
                                     <p className="text-muted-foreground font-anton mb-3">
                                         {t.projectDetails.myRole}
                                     </p>
 
                                     <div className="text-lg">
-                                        {parse(project.role)}
+                                        {parse(content.role)}
                                     </div>
                                 </div>
                             )}

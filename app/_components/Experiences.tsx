@@ -1,6 +1,5 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
-import { MY_EXPERIENCE } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -59,8 +58,8 @@ const Experiences = () => {
                 <SectionTitle title={t.experience.title} />
 
                 <div className="grid gap-14">
-                    {MY_EXPERIENCE.map((item) => (
-                        <div key={item.title} className="experience-item">
+                    {t.experience.items.map((item) => (
+                        <div key={item.company} className="experience-item">
                             <p className="text-xl text-muted-foreground">
                                 {item.company}
                             </p>
