@@ -13,6 +13,7 @@ export const translations = {
             description:
                 "Hi! I'm Yassine — a Software Engineer building fast, scalable, user-focused Web/Mobile apps, with a growing specialty in applied AI (RAG systems, intelligent agents).",
             available: 'Available for full-time opportunities',
+            downloadCv: 'Download my CV',
             yearsExp: 'Completed Projects',
             completedProjects: 'Technologies Mastered',
             hoursWorked: 'AI Systems Built',
@@ -36,9 +37,10 @@ export const translations = {
                     company: 'Telnet',
                     duration: 'Feb 2026 - Aug 2026',
                     points: [
-                        'Designed and built "Talent Manager", a full-stack HR platform with a Flutter Web frontend and a Node.js/Express/MongoDB Atlas backend deployed on Vercel.',
-                        'Built HR analytics modules including goals & reviews, entry/exit stats, age/gender pyramids, and a 9-Box talent grid with fl_chart visualizations.',
-                        'Developed an AI layer featuring a RAG chatbot, a CV analysis agent, and an agentic RAG system with tool-calling that performs real database operations.',
+                     'Designed and built "Talent Management", a full-stack HR ecosystem made of "Talent Manager" (Flutter Web) for HR teams and "Talent Companion" (Flutter mobile) for engineers, sharing a Node.js/Express/MongoDB Atlas backend deployed on Vercel.',
+                        'Built HR modules including recruitment with AI-assisted CV import, skills evaluation, goals & reviews, HR analytics (entry/exit stats, age/gender pyramids), and a 9-Box talent grid with fl_chart visualizations.',
+                        'Developed the Talent Companion mobile app with location-based attendance check-in, HR requests, a team feed synced with Slack, and a points & badges system with an AI-generated daily quiz.',
+                        'Developed an AI layer of three agents on Groq (LLaMA): a RAG HR assistant, a CV analyzer, and an agentic HR agent with tool-calling that performs real database operations after user confirmation.',
                     ],
                 },
                 {
@@ -96,38 +98,49 @@ export const translations = {
         projects: {
             title: 'PROJECTS',
             content: {
-                'talent-manager': {
-                    description: `
-            A full-stack HR talent management platform built for Telnet, designed to help HR teams track engineers, manage reviews, and make data-driven talent decisions. <br/> <br/>
+                'talent-management': {
+                description: `
+            A full-stack HR and talent management ecosystem built for Telnet, made of two connected apps sharing one backend: <b>Talent Manager</b> (web) for HR teams and <b>Talent Companion</b> (mobile) for engineers. <br/> <br/>
 
-            Key Features:<br/>
+            <b>Talent Manager (Web)</b><br/>
             <ul>
-              <li>📊 HR Analytics Dashboard: Entry/exit rates, gender and age pyramid, department breakdown</li>
-              <li>🎯 Goals & Reviews Module: Objective tracking and satisfaction stats by month, age, and gender</li>
-              <li>🧩 9-Box Talent Grid: Interactive bubble chart for talent evaluation</li>
-              <li>📈 Skills Evaluation Dashboard: Radar charts and stacked bars mapping 27 skills across 7 categories</li>
-              <li>🤖 AI Layer: RAG chatbot, CV analysis agent, and an agentic RAG system with tool-calling that performs real database operations</li>
+                <li>📊 HR Analytics Dashboard: entry/exit rates, gender and age pyramid, department breakdown</li>
+                <li>🧑‍💼 Recruitment Module: needs tracking, candidate pipeline, and AI-assisted CV import</li>
+                <li>🧩 9-Box Talent Grid: interactive grid and bubble chart for talent evaluation</li>
+                <li>📈 Skills Evaluation: radar charts and stacked bars mapping 27 skills across 7 categories</li>
+                <li>🎯 Goals & Reviews: yearly review cycle, goal tracking, and satisfaction stats</li>
+                <li>🤖 3 AI Agents: HR Assistant (RAG), CV Analyzer, and an HR Agent with tool-calling that performs real database operations after user confirmation</li>
             </ul><br/>
 
-            Technical Highlights:
+            <b>Talent Companion (Mobile)</b><br/>
             <ul>
-              <li>Built a full data model chain: Client → Project → Job → JobLevel → Engineer</li>
-              <li>Implemented a skills comparison system matching required vs. actual skills with automatic sync</li>
-              <li>Integrated Cloudinary for media, Nodemailer for transactional emails, and JWT-based authentication</li>
-              <li>Packaged the app as a Windows executable for a live CTO demo</li>
+                <li>📍 Location-based attendance check-in with an attendance calendar</li>
+                <li>📝 HR requests (remote work, sick leave, day off) with approval notifications</li>
+                <li>💬 Team feed synced both ways with Slack, plus GitHub profile connection</li>
+                <li>🏆 Points, badges, leaderboard, peer recognition, and an AI-generated daily quiz</li>
+            </ul><br/>
+
+            <b>Technical Highlights</b>
+            <ul>
+                <li>Built a full data model chain: Client → Project → Job → JobLevel → Engineer</li>
+                <li>Implemented a skills comparison system matching required vs. actual skills</li>
+                <li>Added automatic model fallback and token management for the AI agents</li>
+                <li>Integrated Cloudinary, Nodemailer, Slack API (OAuth, webhooks, Events API), and JWT authentication</li>
+                <li>Packaged the web app as a Windows executable for a live CTO demo</li>
             </ul>
             `,
-                    role: `
+                role: `
             Full-Stack Developer <br/>
-            Owned the entire development lifecycle:
+            Owned the entire development lifecycle across both apps:
             <ul>
-              <li>✅ Backend: Built the Node.js/Express/MongoDB Atlas API, including HR stats and recruitment endpoints</li>
-              <li>🎨 Frontend: Built the Flutter Web dashboard with fl_chart visualizations and interactive modals</li>
-              <li>🤖 AI: Designed and implemented the RAG chatbot and agentic tool-calling system with Groq's LLaMA model</li>
-              <li>🚀 Deployment: Deployed the platform on Vercel</li>
+                <li>✅ Backend: built the Node.js/Express/MongoDB Atlas API shared by both apps</li>
+                <li>🎨 Web: built the Flutter Web dashboard with fl_chart visualizations</li>
+                <li>📱 Mobile: built the Talent Companion app in Flutter</li>
+                <li>🤖 AI: designed and implemented the three agents using Groq's LLaMA model</li>
+                <li>🚀 Deployment: deployed the platform on Vercel</li>
             </ul>
             `,
-                },
+            },
                 defendr: {
                     description:
                         'Defendr is an e-sport tournament management dashboard built with Next.js, React, and TypeScript, featuring a responsive interface, API integrations, and real-time updates for tournament organizers.',
@@ -188,6 +201,7 @@ export const translations = {
             description:
             "Salut ! Je suis Yassine — un Ingénieur Logiciel qui conçoit des applications Web/Mobile rapides, évolutives et centrées sur l'utilisateur, avec une spécialisation croissante en IA appliquée (systèmes RAG, agents intelligents).",
             available: 'Disponible pour des opportunités à temps plein',
+            downloadCv: 'Télécharger mon CV',
             yearsExp: "Projets Réalisés",
             completedProjects: 'Technologies Maîtrisées',
             hoursWorked: 'Systèmes IA Développés',
@@ -211,10 +225,11 @@ export const translations = {
                     company: 'Telnet',
                     duration: 'Feb 2026 - Aug 2026',
                     points: [
-                        'Conçu et développé "Talent Manager", une plateforme RH full-stack avec un frontend Flutter Web et un backend Node.js/Express/MongoDB Atlas déployé sur Vercel.',
-                        'Développé des modules d\'analyse RH incluant objectifs et évaluations, statistiques d\'entrée/sortie, pyramides des âges/genres et une grille de talents 9-Box avec des visualisations fl_chart.',
-                        'Développé une couche IA comprenant un chatbot RAG, un agent d\'analyse de CV et un système RAG agentique avec appel d\'outils qui effectue de réelles opérations en base de données.',
-                    ],
+                        "Conception et développement de « Talent Management », un écosystème RH full-stack composé de « Talent Manager » (Flutter Web) pour les équipes RH et de « Talent Companion » (Flutter mobile) pour les ingénieurs, partageant un backend Node.js/Express/MongoDB Atlas déployé sur Vercel.",
+                        "Développement de modules RH incluant le recrutement avec import de CV assisté par IA, l'évaluation des compétences, les objectifs et évaluations, les statistiques RH (taux d'entrées/sorties, pyramides des âges et du genre) et une grille de talents 9-Box avec visualisations fl_chart.",
+                        "Développement de l'application mobile Talent Companion avec pointage de présence géolocalisé, demandes RH, flux d'équipe synchronisé avec Slack, et système de points et badges avec quiz quotidien généré par IA.",
+                        "Développement d'une couche IA de trois agents basés sur Groq (LLaMA) : un assistant RH RAG, un analyseur de CV et un agent RH avec appels d'outils, capable d'effectuer de vraies opérations en base de données après confirmation de l'utilisateur.",
+                        ],
                 },
                 {
                     title: 'Développeur Full-Stack',
@@ -271,38 +286,49 @@ export const translations = {
         projects: {
             title: 'PROJETS SÉLECTIONNÉS',
             content: {
-                'talent-manager': {
-                    description: `
-            Une plateforme RH full-stack de gestion des talents développée pour Telnet, conçue pour aider les équipes RH à suivre les ingénieurs, gérer les évaluations et prendre des décisions sur les talents basées sur les données. <br/> <br/>
+            'talent-management': {
+                description: `
+            Un écosystème RH full-stack de gestion des talents développé pour Telnet, composé de deux applications connectées partageant un même backend : <b>Talent Manager</b> (web) pour les équipes RH et <b>Talent Companion</b> (mobile) pour les ingénieurs. <br/> <br/>
 
-            Fonctionnalités clés :<br/>
+            <b>Talent Manager (Web)</b><br/>
             <ul>
-              <li>📊 Tableau de bord d'analyse RH : taux d'entrée/sortie, pyramide des âges et des genres, répartition par département</li>
-              <li>🎯 Module Objectifs & Évaluations : suivi des objectifs et statistiques de satisfaction par mois, âge et genre</li>
-              <li>🧩 Grille de talents 9-Box : graphique à bulles interactif pour l'évaluation des talents</li>
-              <li>📈 Tableau de bord d'évaluation des compétences : graphiques radar et barres empilées cartographiant 27 compétences réparties sur 7 catégories</li>
-              <li>🤖 Couche IA : chatbot RAG, agent d'analyse de CV et un système RAG agentique avec appel d'outils qui effectue de réelles opérations en base de données</li>
+                <li>📊 Tableau de bord d'analyse RH : taux d'entrée/sortie, pyramide des âges et des genres, répartition par département</li>
+                <li>🧑‍💼 Module Recrutement : suivi des besoins, pipeline de candidats et import de CV assisté par IA</li>
+                <li>🧩 Grille de talents 9-Box : grille interactive et graphique à bulles pour l'évaluation des talents</li>
+                <li>📈 Évaluation des compétences : graphiques radar et barres empilées cartographiant 27 compétences réparties sur 7 catégories</li>
+                <li>🎯 Objectifs & Évaluations : cycle d'évaluation annuel, suivi des objectifs et statistiques de satisfaction</li>
+                <li>🤖 3 agents IA : assistant RH (RAG), analyseur de CV et agent RH avec appel d'outils qui effectue de réelles opérations en base de données après confirmation de l'utilisateur</li>
             </ul><br/>
 
-            Points forts techniques :
+            <b>Talent Companion (Mobile)</b><br/>
             <ul>
-              <li>Construit une chaîne complète de modèles de données : Client → Projet → Poste → Niveau de poste → Ingénieur</li>
-              <li>Implémenté un système de comparaison des compétences faisant correspondre les compétences requises et réelles avec synchronisation automatique</li>
-              <li>Intégré Cloudinary pour les médias, Nodemailer pour les emails transactionnels et une authentification basée sur JWT</li>
-              <li>Conditionné l'application en exécutable Windows pour une démonstration en direct au CTO</li>
+                <li>📍 Pointage de présence géolocalisé avec calendrier d'assiduité</li>
+                <li>📝 Demandes RH (télétravail, congé maladie, jour de repos) avec notifications d'approbation</li>
+                <li>💬 Flux d'équipe synchronisé dans les deux sens avec Slack, et connexion du profil GitHub</li>
+                <li>🏆 Points, badges, classement, reconnaissance entre pairs et quiz quotidien généré par IA</li>
+            </ul><br/>
+
+            <b>Points forts techniques</b>
+            <ul>
+                <li>Construit une chaîne complète de modèles de données : Client → Projet → Poste → Niveau de poste → Ingénieur</li>
+                <li>Implémenté un système de comparaison des compétences faisant correspondre les compétences requises et réelles</li>
+                <li>Ajouté une bascule automatique entre modèles et une gestion des tokens pour les agents IA</li>
+                <li>Intégré Cloudinary, Nodemailer, l'API Slack (OAuth, webhooks, Events API) et une authentification basée sur JWT</li>
+                <li>Conditionné l'application web en exécutable Windows pour une démonstration en direct au CTO</li>
             </ul>
             `,
-                    role: `
+                role: `
             Développeur Full-Stack <br/>
-            J'ai pris en charge l'intégralité du cycle de vie du développement :
+            J'ai pris en charge l'intégralité du cycle de vie du développement des deux applications :
             <ul>
-              <li>✅ Backend : développé l'API Node.js/Express/MongoDB Atlas, y compris les endpoints de statistiques RH et de recrutement</li>
-              <li>🎨 Frontend : développé le tableau de bord Flutter Web avec les visualisations fl_chart et des modales interactives</li>
-              <li>🤖 IA : conçu et implémenté le chatbot RAG et le système agentique avec appel d'outils utilisant le modèle LLaMA de Groq</li>
-              <li>🚀 Déploiement : déployé la plateforme sur Vercel</li>
+                <li>✅ Backend : développé l'API Node.js/Express/MongoDB Atlas partagée par les deux applications</li>
+                <li>🎨 Web : développé le tableau de bord Flutter Web avec les visualisations fl_chart</li>
+                <li>📱 Mobile : développé l'application Talent Companion avec Flutter</li>
+                <li>🤖 IA : conçu et implémenté les trois agents utilisant le modèle LLaMA de Groq</li>
+                <li>🚀 Déploiement : déployé la plateforme sur Vercel</li>
             </ul>
             `,
-                },
+            },
                 defendr: {
                     description:
                         'Defendr est un tableau de bord de gestion de tournois e-sport développé avec Next.js, React et TypeScript, doté d\'une interface responsive, d\'intégrations API et de mises à jour en temps réel pour les organisateurs de tournois.',

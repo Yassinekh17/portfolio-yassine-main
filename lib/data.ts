@@ -123,61 +123,76 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Talent Manager',
-        slug: 'talent-manager',
+        title: 'Talent Management',
+        slug: 'talent-management',
         year: 2026,
         description: `
-      A full-stack HR talent management platform built for Telnet, designed to help HR teams track engineers, manage reviews, and make data-driven talent decisions. <br/> <br/>
-
-      Key Features:<br/>
+      A full-stack HR and talent management ecosystem built for Telnet, made of two connected apps sharing one backend: <b>Talent Manager</b> (web) for HR teams and <b>Talent Companion</b> (mobile) for engineers. <br/> <br/>
+    
+      <b>Talent Manager (Web)</b><br/>
       <ul>
         <li>📊 HR Analytics Dashboard: Entry/exit rates, gender and age pyramid, department breakdown</li>
-        <li>🎯 Goals & Reviews Module: Objective tracking and satisfaction stats by month, age, and gender</li>
-        <li>🧩 9-Box Talent Grid: Interactive bubble chart for talent evaluation</li>
-        <li>📈 Skills Evaluation Dashboard: Radar charts and stacked bars mapping 27 skills across 7 categories</li>
-        <li>🤖 AI Layer: RAG chatbot, CV analysis agent, and an agentic RAG system with tool-calling that performs real database operations</li>
+        <li>🧑‍💼 Recruitment Module: Needs tracking, candidate pipeline, and AI-assisted CV import</li>
+        <li>🧩 9-Box Talent Grid: Interactive grid and bubble chart for talent evaluation</li>
+        <li>📈 Skills Evaluation: Radar charts and stacked bars mapping 27 skills across 7 categories</li>
+        <li>🎯 Goals & Reviews: Yearly review cycle, goal tracking, and satisfaction stats</li>
+        <li>🤖 3 AI Agents: HR Assistant (RAG), CV Analyzer, and an HR Agent with tool-calling that performs real database operations after user confirmation</li>
       </ul><br/>
-
-      Technical Highlights:
+    
+      <b>Talent Companion (Mobile)</b><br/>
+      <ul>
+        <li>📍 Location-based attendance check-in with an attendance calendar</li>
+        <li>📝 HR requests (remote work, sick leave, day off) with approval notifications</li>
+        <li>💬 Team feed synced both ways with Slack, plus GitHub profile connection</li>
+        <li>🏆 Points, badges, leaderboard, peer recognition, and an AI-generated daily quiz</li>
+      </ul><br/>
+    
+      <b>Technical Highlights</b>
       <ul>
         <li>Built a full data model chain: Client → Project → Job → JobLevel → Engineer</li>
-        <li>Implemented a skills comparison system matching required vs. actual skills with automatic sync</li>
-        <li>Integrated Cloudinary for media, Nodemailer for transactional emails, and JWT-based authentication</li>
-        <li>Packaged the app as a Windows executable for a live CTO demo</li>
+        <li>Implemented a skills comparison system matching required vs. actual skills</li>
+        <li>Added automatic model fallback and token management for the AI agents</li>
+        <li>Integrated Cloudinary, Nodemailer, Slack API (OAuth, webhooks, Events API), and JWT authentication</li>
+        <li>Packaged the web app as a Windows executable for a live CTO demo</li>
       </ul>
       `,
         role: `
       Full-Stack Developer <br/>
-      Owned the entire development lifecycle:
+      Owned the entire development lifecycle across both apps:
       <ul>
-        <li>✅ Backend: Built the Node.js/Express/MongoDB Atlas API, including HR stats and recruitment endpoints</li>
-        <li>🎨 Frontend: Built the Flutter Web dashboard with fl_chart visualizations and interactive modals</li>
-        <li>🤖 AI: Designed and implemented the RAG chatbot and agentic tool-calling system with Groq's LLaMA model</li>
+        <li>✅ Backend: Built the Node.js/Express/MongoDB Atlas API shared by both apps</li>
+        <li>🎨 Web: Built the Flutter Web dashboard with fl_chart visualizations</li>
+        <li>📱 Mobile: Built the Talent Companion app in Flutter</li>
+        <li>🤖 AI: Designed and implemented the three Groq (LLaMA) agents</li>
         <li>🚀 Deployment: Deployed the platform on Vercel</li>
       </ul>
       `,
         techStack: [
-            'Flutter Web',
+            'Flutter',
             'Node.js',
             'Express.js',
             'MongoDB Atlas',
             'Groq LLaMA',
+            'Slack API',
             'Cloudinary',
             'JWT',
             'Vercel',
         ],
         thumbnail: '/projects/thumbnail/imresizer-telnet.png',
         longThumbnail: '/projects/long/imresizer-telnet.png',
-        images: [
-            "/projects/images/Capturedécran206-08-01021557.png",
-            "/projects/images/Capturedécran2026-08-0122728.png",
-            "/projects/images/Capturedécran2026-08-01022316.png",
-            '/projects/images/Capturedécran2026-08-01022621.png',
-            "/projects/images/Capturedécran2026-08-01022818.png",
-            "/projects/images/Capturedécran2026-08-01023006.png",
-            "/projects/images/Capturedécran2026-08-01023101.png",
-            '/projects/images/Capturedécran2026-08-01022358.png',
-            '/projects/images/Capturedécran2026-08-01023029.png',
+        videos: [
+            '/projects/videos/login et home.mp4',
+            '/projects/videos/HR.mp4',
+            '/projects/videos/Skills.mp4',
+            '/projects/videos/Goals&Reviews.mp4',
+            '/projects/videos/ai 1.mp4',
+            '/projects/videos/ai 2.mp4',
+            '/projects/videos/ai3.mp4',
+            '/projects/videos/mobile1.mp4',
+            '/projects/videos/mobile2.mp4',
+            '/projects/videos/mobile3.mp4',
+            '/projects/videos/mobile4.mp4',
+            '/projects/videos/mobile5.mp4',
         ],
     },
     {

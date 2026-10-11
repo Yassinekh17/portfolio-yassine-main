@@ -24,6 +24,13 @@ const ProjectDetails = ({ project }: Props) => {
             project.slug as keyof typeof t.projects.content
         ] ?? project;
 
+    const isMobileVideo = (video: string) =>
+        video.split('/').pop()?.startsWith('mobile');
+    const desktopVideos = project.videos?.filter(
+        (v) => !isMobileVideo(v),
+    );
+    const mobileVideos = project.videos?.filter(isMobileVideo);
+
     useGSAP(
         () => {
             if (!containerRef.current) return;
@@ -71,16 +78,21 @@ const ProjectDetails = ({ project }: Props) => {
             gsap.utils
                 .toArray<HTMLDivElement>('#images > div')
                 .forEach((imageDiv, i) => {
-                    gsap.to(imageDiv, {
-                        backgroundPosition: `center 0%`,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: imageDiv,
-                            start: () => (i ? 'top bottom' : 'top 50%'),
-                            end: 'bottom top',
-                            scrub: true,
+                    gsap.to(
+                        imageDiv.querySelector<HTMLElement>(
+                            '.parallax-layer',
+                        ) || imageDiv,
+                        {
+                            backgroundPosition: `center 0%`,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: imageDiv,
+                                start: () => (i ? 'top bottom' : 'top 50%'),
+                                end: 'bottom top',
+                                scrub: true,
+                            },
                         },
-                    });
+                    );
                 });
         },
         { scope: containerRef },
@@ -181,26 +193,84 @@ const ProjectDetails = ({ project }: Props) => {
                     className="fade-in-later relative flex flex-col gap-2 max-w-[800px] mx-auto"
                     id="images"
                 >
-                    {project.images.map((image) => (
-                        <div
-                            key={image}
-                            className="group relative w-full aspect-[750/400] bg-background-light"
-                            style={{
-                                backgroundImage: `url(${image})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center 50%',
-                                backgroundRepeat: 'no-repeat',
-                            }}
-                        >
-                            <a
-                                href={image}
-                                target="_blank"
-                                className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
-                            >
-                                <ExternalLink />
-                            </a>
-                        </div>
-                    ))}
+                    {project.videos
+                        ? (
+                              <>
+                                  {desktopVideos?.map((video) => (
+                                      <div
+                                          key={video}
+                                          className="group relative w-full aspect-[750/400] bg-background-light"
+                                      >
+                                          <video
+                                              src={video}
+                                              className="w-full h-full object-cover"
+                                              controls
+                                              muted
+                                              loop
+                                              playsInline
+                                              preload="metadata"
+                                          />
+                                          <a
+                                              href={video}
+                                              target="_blank"
+                                              className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                                          >
+                                              <ExternalLink />
+                                          </a>
+                                      </div>
+                                  ))}
+                                  {mobileVideos?.length ? (
+                                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                          {mobileVideos.map((video) => (
+                                              <div
+                                                  key={video}
+                                                  className="group relative w-full bg-background-light"
+                                              >
+                                                  <video
+                                                      src={video}
+                                                      className="w-full h-auto object-contain"
+                                                      controls
+                                                      muted
+                                                      loop
+                                                      playsInline
+                                                      preload="metadata"
+                                                  />
+                                                  <a
+                                                      href={video}
+                                                      target="_blank"
+                                                      className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                                                  >
+                                                      <ExternalLink />
+                                                  </a>
+                                              </div>
+                                          ))}
+                                      </div>
+                                  ) : null}
+                              </>
+                          )
+                        : project.images?.map((image) => (
+                              <div
+                                  key={image}
+                                  className="group relative w-full aspect-[750/400] bg-background-light"
+                              >
+                                  <div
+                                      className="parallax-layer absolute inset-0"
+                                      style={{
+                                          backgroundImage: `url(${image})`,
+                                          backgroundSize: 'cover',
+                                          backgroundPosition: 'center 50%',
+                                          backgroundRepeat: 'no-repeat',
+                                      }}
+                                  />
+                                  <a
+                                      href={image}
+                                      target="_blank"
+                                      className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                                  >
+                                      <ExternalLink />
+                                  </a>
+                              </div>
+                          ))}
                 </div>
             </div>
         </section>

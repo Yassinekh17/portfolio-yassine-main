@@ -23,7 +23,8 @@ export interface IProject {
     techStack: string[];
     thumbnail: string;
     longThumbnail: string;
-    images: string[];
+    images?: string[];
+    videos?: string[];
     slug: string;
     liveUrl?: string;
     sourceCode?: string;

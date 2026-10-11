@@ -4,6 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { Download } from 'lucide-react';
 import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -54,6 +55,15 @@ const Banner = () => {
                             {t.banner.available}
                         </span>
                     </div>
+
+                    <a
+                        href="/cv_YassineKhiari.pdf"
+                        download
+                        className="slide-up-and-fade mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-6 py-3 transition-colors hover:bg-primary/90"
+                    >
+                        <Download size={18} />
+                        {t.banner.downloadCv}
+                    </a>
                 </div>
 
                 <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
